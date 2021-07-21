@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>API Testing</title>
+</head>
+<body>
+    <h1>API TESTING</h1>
+    <div class="container">
+        <div class="details">
+            <label>Enter your name</label>
+            <!-- nameid should be different so that API could be fetched on it -->
+            <input type="text" name="" id="nameid">
+        </div>
+        <!-- this is default img , but it will change upon submit -->
+        <div class="imgdiv">
+            <!-- we have to change this source using API -->
+            <img src="img.JPG" class="image" alt="">
+        </div>
+        <button>Click Me</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //when the doc is ready , a function should work
+        $(document).ready(function(){
+            $('button').click(function(){
+                const name = $('#nameid').val();
+                //to check working , lets alert its msg
+                alert(name);
+                $('.image').attr('src',`https://joeschmoe.io/api/v1/${name}`);
+            const b = $('.image');
+            console.log(b);
+            });
+        });
+    </script>
+</body>
+</html>
